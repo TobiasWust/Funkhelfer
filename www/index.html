@@ -17,33 +17,40 @@
 </head>
 
 <body>
+  <div class="menuwrapper clicktrough">
+  </div>
+  <nav class="topmenu">
+      <ul>
+        <li id="pmrmenu" class="menutoggle menuactive">PMR</li>
+        <li id="lpdmenu" class="menutoggle menuactive">LPD</li>
+        <li id="unterkanalmenu" class="menutoggle menuactive">Unterkanal</li>
+        <li>
+          <hr>
+        </li>
+        <li id="showImpressum">Impressum</li>
+      </ul>
+    </nav>
+
   <div id="wrapper">
     <!--[if lte IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
     <div class="header">
-      <img src="img/logo.png" alt="Flugschule Phönix Logo">
-      <h1>Flugschule Phönix Funkhelfer</h1>
-      <div class="row">
-          <input type="checkbox" id="hamburg">
-          <label for="hamburg" class="hamburg">
-              <span class="line"></span>
-              <span class="line"></span>
-              <span class="line"></span>
-          </label>
-          <nav class="topmenu">
-              <ul>
-                 <li>PMR</li>
-                 <li>LPD</li>
-                 <li>Unterkanal</li>
-              </ul>
-           </nav>
+      <div class="menubutton">
+          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="26" height="26" viewBox="0 0 26 26"
+            style=" fill:#000000;">
+            <g id="surface1">
+              <path d="M 0 4 L 0 6 L 26 6 L 26 4 Z M 0 12 L 0 14 L 26 14 L 26 12 Z M 0 20 L 0 22 L 26 22 L 26 20 Z "></path>
+            </g>
+          </svg>
       </div>
+      <h1>Flugschule Phönix Funkhelfer</h1>
+      <img src="img/logo.png" alt="Flugschule Phönix Logo">
     </div>
 
-    <div id="tablegrid">
-      <h2>PMR</h2>
-      <div class="list">
+    <div class="tablegrid">
+      <h2 id="pmrlabel">PMR</h2>
+      <div id="pmrlist" class="list">
         <table>
           <tr>
             <td>1</td>
@@ -113,8 +120,8 @@
         </table>
       </div>
 
-      <h2>LPD</h2>
-      <div class="list">
+      <h2 id="lpdlabel">LPD</h2>
+      <div id="lpdlist" class="list">
         <table>
           <tr>
             <td>1</td>
@@ -395,8 +402,8 @@
         </table>
       </div>
 
-      <h2>Unterkanal</h2>
-      <div class="list">
+      <h2 id="unterkanallabel">Unterkanal</h2>
+      <div id="unterkanallist" class="list">
         <table>
           <tr>
             <td>1</td>
@@ -555,6 +562,26 @@
       </div>
     </div>
   </div>
+
+  <div id="impressum">
+    <div>
+      <h2>Flugschule Phönix</h2>
+      Alexander Müller<br>
+      Spessartstraße 22<br>
+      D-63546 Hammersbach<br>
+      ✆ +49 157 896 551 28<br>
+      <a href="https://www.paragliding-phoenix.de/">https://www.paragliding-phoenix.de/</a>
+    </div>
+    
+    <div>
+      <h2>Entwicklung</h2>
+      Tobias Wust<br>
+      <a href="https://www.tobiaswust.de/">https://www.tobiaswust.de/</a>
+    </div>
+
+    <button>Zurück</button>
+  </div>
+  <script src="js/script.js"></script>
   <!-- <p><a href="https://paragliding-phoenix.de">https://paragliding-phoenix.de</a></p> -->
 </body>
 
