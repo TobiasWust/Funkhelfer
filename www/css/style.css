@@ -1,0 +1,126 @@
+@font-face {
+    font-family: VarelaRound-Regular;
+    src: url(../fonts/VarelaRound-Regular.ttf);
+}
+
+@font-face {
+    font-family: DancingScript-Regular;
+    src: url(../fonts/DancingScript-Regular.ttf);
+}
+
+body {
+    background-color: #e2e2e2;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: VarelaRound-Regular;
+}
+
+.header {
+    background-color: #ffaa4d;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+    padding: 1em;
+    box-sizing: border-box;
+    height: 15vh;
+}
+
+.header img {
+    float: left;
+    height: 100%;
+}
+
+h1 {
+    color: black;
+    font-family: DancingScript-Regular;
+    margin: 0;
+}
+
+h2 {
+    clear: both;
+    margin: 0;
+}
+
+#tablegrid {
+    display: grid;
+    height: 85vh;
+}
+
+.list {
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+
+table {
+    background-color: #ffaa4d;
+    width: 100%;
+    border-collapse: collapse;
+    /* display:none; */
+}
+
+tr:nth-child(2n+1) {
+    background: #da291c;
+}
+
+tr:hover {
+    background-color: #3f6c8d;
+}
+
+td {
+    width: 50%;
+    padding: 0px;
+    font-family: VarelaRound-Regular;
+    font-weight: bold;
+}
+
+label.hamburg { 
+    display: block;
+    background: #555; width: 75px; height: 50px; 
+    position: relative; 
+    margin-left: auto; margin-right: auto;
+    border-radius: 4px; 
+ }
+ 
+ input#hamburg {display:none}
+
+ .line { 
+    position: absolute; 
+    left:10px;
+    height: 4px; width: 55px; 
+    background: #fff; border-radius: 2px;
+    display: block; 
+    transition: 0.5s; 
+    transform-origin: center; 
+ }
+ 
+ .line:nth-child(1) { top: 12px; }
+ .line:nth-child(2) { top: 24px; }
+ .line:nth-child(3) { top: 36px; }
+ 
+ #hamburg:checked + .hamburg .line:nth-child(1){
+    transform: translateY(12px) rotate(-45deg);
+ }
+ 
+ #hamburg:checked + .hamburg .line:nth-child(2){
+    opacity:0;
+ }
+ 
+ #hamburg:checked + .hamburg .line:nth-child(3){
+    transform: translateY(-12px) rotate(45deg);
+ }
+
+ nav.topmenu { 
+    position: absolute;
+    height: auto; 
+    max-height:0; 
+    overflow: hidden; 
+    transition: all 0.5s;
+    background-color: grey
+}
+
+#hamburg:checked + .hamburg  + nav.topmenu { 
+    max-height: 600px; 
+}
