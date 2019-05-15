@@ -26,6 +26,7 @@ const setItem = (item, state) => {
   }
   localStorage.setItem(i, state);
   $('.tablegrid').style.display = 'grid';
+  $('#impressum').style.display = 'none';
 }
 
 $('.menubutton').addEventListener('click', () => openMenu());
@@ -36,9 +37,14 @@ document.querySelectorAll('.menutoggle').forEach((e) => e.addEventListener('clic
   closeMenu()
 }));
 
-$('button').addEventListener('click', () => $('.tablegrid').style.display = 'grid');
+$('button').addEventListener('click', () => {
+  $('.tablegrid').style.display = 'grid';
+  $('#impressum').style.display = 'none';
+});
+
 $('#showImpressum').addEventListener('click', () => {
   $('.tablegrid').style.display = 'none';
+  $('#impressum').style.display = 'flex';
   closeMenu();
 });
 

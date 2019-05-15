@@ -1,9 +1,11 @@
+nicht im google sync sein!
+
 cordova build android --release
 
 C:\GDrive\Sync\Programmiertes\Webdesign\Funkhelfer\platforms\android\build\outputs\apk
 
-jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore NAME-mobileapps.keystore android-release-unsigned.apk NAMEmobileapps
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore NAME-mobileapps.keystore app-release-unsigned.apk NAMEmobileapps
 
 pw ocnaviv
 
-zipalign -v 4 android-release-unsigned.apk phoenixfunkhelfer.apk
+zipalign -v 4 app-release-unsigned.apk phoenixfunkhelfer.apk
