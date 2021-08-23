@@ -71,9 +71,6 @@ jspm_packages
 # Yarn Integrity file
 .yarn-integrity
 
-#service worker
-sw.*
-
 #svn
 .svn
 
