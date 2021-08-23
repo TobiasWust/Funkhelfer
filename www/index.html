@@ -14,22 +14,27 @@
   <!-- Place favicon.ico in the root directory -->
 
   <link rel="stylesheet" href="css/style.css">
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('js/sw.js');
+    };
+  </script>
 </head>
 
 <body>
   <div class="menuwrapper clicktrough">
   </div>
   <nav class="topmenu">
-      <ul>
-        <li id="pmrmenu" class="menutoggle menuactive">PMR</li>
-        <li id="lpdmenu" class="menutoggle menuactive">LPD</li>
-        <li id="unterkanalmenu" class="menutoggle menuactive">Unterkanal</li>
-        <li>
-          <hr>
-        </li>
-        <li id="showImpressum">Impressum</li>
-      </ul>
-    </nav>
+    <ul>
+      <li id="pmrmenu" class="menutoggle menuactive">PMR</li>
+      <li id="lpdmenu" class="menutoggle menuactive">LPD</li>
+      <li id="unterkanalmenu" class="menutoggle menuactive">Unterkanal</li>
+      <li>
+        <hr>
+      </li>
+      <li id="showImpressum">Impressum</li>
+    </ul>
+  </nav>
 
   <div id="wrapper">
     <!--[if lte IE 9]>
@@ -37,12 +42,13 @@
         <![endif]-->
     <div class="header">
       <div class="menubutton">
-          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="26" height="26" viewBox="0 0 26 26"
-            style=" fill:#000000;">
-            <g id="surface1">
-              <path d="M 0 4 L 0 6 L 26 6 L 26 4 Z M 0 12 L 0 14 L 26 14 L 26 12 Z M 0 20 L 0 22 L 26 22 L 26 20 Z "></path>
-            </g>
-          </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="26" height="26" viewBox="0 0 26 26"
+          style=" fill:#000000;">
+          <g id="surface1">
+            <path d="M 0 4 L 0 6 L 26 6 L 26 4 Z M 0 12 L 0 14 L 26 14 L 26 12 Z M 0 20 L 0 22 L 26 22 L 26 20 Z ">
+            </path>
+          </g>
+        </svg>
       </div>
       <h1>Flugschule Phönix Funkhelfer</h1>
       <img src="img/logo.png" alt="Flugschule Phönix Logo">
@@ -572,7 +578,7 @@
       ✆ +49 157 896 551 28<br>
       <a href="https://www.paragliding-phoenix.de/">https://www.paragliding-phoenix.de/</a>
     </div>
-    
+
     <div>
       <h2>Entwicklung</h2>
       Tobias Wust<br>
