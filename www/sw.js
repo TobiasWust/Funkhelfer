@@ -2,7 +2,8 @@ self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open('sw-cache').then((cache) => cache.addAll([
       '/index.html',
-      '/js/script.js'
+      '/js/script.js',
+      '/css/style.css'
     ]))
   );
 });

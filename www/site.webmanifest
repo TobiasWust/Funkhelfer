@@ -1,7 +1,13 @@
 {
     "short_name": "Funkhelfer",
     "name": "Flugschule Phönix Funkhelfer",
+    "description": "Eine App, die dabei hilft mit unterschiedlichen Funkgeräten zu funken. Dafür wird ein Umrechnung von Kanal zu Frequenz angeboten.",
     "icons": [
+        {
+            "src": "img/icon512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
         {
             "src": "icon.png",
             "sizes": "100x100",
