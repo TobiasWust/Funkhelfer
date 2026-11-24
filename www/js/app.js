@@ -1,6 +1,6 @@
 import { SERVICES, CTCSS, AIR_TO_AIR, fmt, service, tone } from './data.js';
 
-const VERSION = '2.0.0';
+const VERSION = '2.1.0';
 const $ = (s) => document.querySelector(s);
 const store = {
   get(k, d) { try { const v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); } catch { return d; } },
@@ -154,7 +154,7 @@ $('#sheetCopy').addEventListener('click', () => {
   const { s, c } = sheetItem;
   copy(s ? `${s.short} ${c.ch}: ${freqText(s, c)}` : `CTCSS ${c.ch}: ${fmt(c.hz, 1)} Hz`);
 });
-for (const d of ['#sheet', '#info']) {
+for (const d of ['#sheet', '#info', '#privacy', '#imprint']) {
   $(d).addEventListener('click', (e) => { if (e.target === e.currentTarget) e.currentTarget.close(); });
 }
 
@@ -233,6 +233,13 @@ $('#search').addEventListener('input', renderList);
 
 // ---------- Infos ----------
 $('#openInfo').addEventListener('click', () => $('#info').showModal());
+// Datenschutz und Impressum (auch aus anderen Dialogen heraus)
+document.querySelectorAll('[data-open]').forEach((b) => b.addEventListener('click', () => {
+  const d = document.getElementById(b.dataset.open);
+  b.closest('dialog.legal')?.close();
+  if (!d.open) d.showModal();
+  d.scrollTop = 0;
+}));
 $('#version').textContent = VERSION;
 $('#airList').replaceChildren(...AIR_TO_AIR.map((a) => {
   const li = el('li');

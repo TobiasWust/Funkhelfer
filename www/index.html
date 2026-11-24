@@ -48,6 +48,17 @@
       <img src="img/phoenix-logo.png" width="96" height="75" alt="Flugschule Phönix" loading="lazy">
       <span>Präsentiert von der<br><strong>Flugschule Phönix</strong></span>
     </a>
+
+    <footer class="footer">
+      <p>Made with <span class="heart">❤️</span> by <a href="https://wust.dev/" target="_blank" rel="noopener noreferrer">Wust</a></p>
+      <p>
+        <button type="button" data-open="privacy">Datenschutz</button>
+        <span aria-hidden="true">·</span>
+        <button type="button" data-open="imprint">Impressum</button>
+        <span aria-hidden="true">·</span>
+        <a href="https://ko-fi.com/tobiaswust" target="_blank" rel="noopener noreferrer">☕ Kaffee spendieren</a>
+      </p>
+    </footer>
   </main>
 
   <!-- Detail eines Kanals -->
@@ -138,9 +149,103 @@
 
       <section>
         <h3>Entwicklung</h3>
-        <p>Tobias Wust · <a href="https://www.tobiaswust.de/" target="_blank" rel="noopener">tobiaswust.de</a></p>
-        <p class="small">Version <span id="version"></span> · funktioniert offline</p>
+        <p>Made with ❤️ by <a href="https://wust.dev/" target="_blank" rel="noopener noreferrer">Wust</a> ·
+          <a href="https://ko-fi.com/tobiaswust" target="_blank" rel="noopener noreferrer">☕ Kaffee spendieren</a></p>
+        <p class="small">Version <span id="version"></span> · funktioniert offline ·
+          <button type="button" class="linkbtn" data-open="privacy">Datenschutz</button> ·
+          <button type="button" class="linkbtn" data-open="imprint">Impressum</button></p>
         <button type="button" class="btn" id="installBtn" hidden>App installieren</button>
+      </section>
+    </form>
+  </dialog>
+
+  <!-- Datenschutz -->
+  <dialog class="info legal" id="privacy" aria-labelledby="privacyTitle">
+    <form method="dialog" class="info__inner">
+      <header class="info__head">
+        <h2 id="privacyTitle">Datenschutz</h2>
+        <button class="iconbtn" value="close" aria-label="Schließen">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+        </button>
+      </header>
+      <p class="small">Funkhelfer · Stand: November 2026</p>
+
+      <section>
+        <h3>1. Verantwortlicher</h3>
+        <p>Verantwortlich für die Datenverarbeitung auf dieser Website im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:</p>
+        <p>Tobias Wust<br>E-Mail: <a href="mailto:kontakt@tobiaswust.de">kontakt@tobiaswust.de</a></p>
+      </section>
+
+      <section>
+        <h3>2. Überblick</h3>
+        <p>Der Funkhelfer läuft komplett in deinem Browser. Es gibt <strong>keine Konten, keine Cookies, keine Werbung und kein Tracking</strong>. Beteiligt ist nur ein externer Dienst: <strong>Netlify</strong> stellt die Dateien der App bereit (Abschnitt 4).</p>
+        <p>Die Links zu Ko-fi („Kaffee spendieren“), zur Flugschule Phönix und zu gleitschirmfunk.de führen auf andere Websites. Von dort wird nichts in diese App geladen. Daten verarbeiten diese Anbieter erst, wenn du den Link öffnest. Dann gilt deren Datenschutzerklärung.</p>
+      </section>
+
+      <section>
+        <h3>3. Daten auf deinem Gerät</h3>
+        <p>Dein Gruppenkanal und der zuletzt gewählte Tab werden im lokalen Speicher deines Browsers (Local Storage) abgelegt. Damit die App auch offline funktioniert, speichert ein Service Worker die App-Dateien im Browser-Cache.</p>
+        <ul>
+          <li>Diese Daten verlassen dein Gerät nicht und sind für uns nicht einsehbar.</li>
+          <li>Wenn du deinen Gruppenkanal teilst, entscheidest du selbst, an wen der Link geht. Der Link enthält nur Funkdienst, Kanal und CTCSS-Code.</li>
+          <li>Du kannst die Daten jederzeit löschen, indem du die Website-Daten in deinem Browser entfernst oder die App deinstallierst.</li>
+        </ul>
+        <p>Die Speicherung ist technisch erforderlich, um die von dir genutzte App bereitzustellen (Art. 6 Abs. 1 lit. b DSGVO, § 25 Abs. 2 TDDDG).</p>
+      </section>
+
+      <section>
+        <h3>4. Hosting und Server-Logs (Netlify)</h3>
+        <p>Diese Website wird von <strong>Netlify, Inc.</strong> gehostet. Beim Aufruf verarbeitet Netlify automatisch technische Daten, die zur Auslieferung nötig sind, etwa IP-Adresse, Browsertyp und -version, Datum und Uhrzeit der Anfrage, die angefragte Datei und die übertragene Datenmenge. Wir nutzen diese Daten nicht für Tracking oder Analysen.</p>
+        <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO – unser berechtigtes Interesse an einer sicheren und funktionierenden Website.</p>
+        <p>Netlify ist unser Auftragsverarbeiter auf Grundlage eines Auftragsverarbeitungsvertrags. Soweit Daten außerhalb der EU/des EWR verarbeitet werden, ist dies durch Standardvertragsklauseln abgesichert.</p>
+      </section>
+
+      <section>
+        <h3>5. Speicherdauer</h3>
+        <ul>
+          <li>Daten auf deinem Gerät bleiben dort, bis du sie löschst.</li>
+          <li>Server-Logs werden von Netlify nur so lange gespeichert, wie es technisch nötig ist.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>6. Deine Rechte</h3>
+        <p>Nach der DSGVO hast du das Recht auf Auskunft (Art. 15), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18), Datenübertragbarkeit (Art. 20) und Widerspruch gegen Verarbeitungen auf Grundlage berechtigter Interessen (Art. 21).</p>
+        <p>Wende dich dafür an <a href="mailto:kontakt@tobiaswust.de">kontakt@tobiaswust.de</a>. Außerdem hast du das Recht, dich bei einer Datenschutz-Aufsichtsbehörde zu beschweren.</p>
+      </section>
+
+      <section>
+        <h3>7. Änderungen</h3>
+        <p>Wir passen diese Erklärung an, wenn sich die App oder die rechtlichen Anforderungen ändern. Es gilt die jeweils aktuelle Fassung.</p>
+      </section>
+    </form>
+  </dialog>
+
+  <!-- Impressum -->
+  <dialog class="info legal" id="imprint" aria-labelledby="imprintTitle">
+    <form method="dialog" class="info__inner">
+      <header class="info__head">
+        <h2 id="imprintTitle">Impressum</h2>
+        <button class="iconbtn" value="close" aria-label="Schließen">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+        </button>
+      </header>
+      <p class="small">Angaben gemäß § 5 DDG</p>
+
+      <section>
+        <h3>Kontakt</h3>
+        <p>Tobias Wust<br>Vor den Kämpen 20<br>30851 Langenhagen<br>Deutschland</p>
+        <p>E-Mail: <a href="mailto:kontakt@tobiaswust.de">kontakt@tobiaswust.de</a></p>
+      </section>
+
+      <section>
+        <h3>Verantwortlich für den Inhalt</h3>
+        <p>Tobias Wust (Anschrift wie oben)</p>
+      </section>
+
+      <section>
+        <h3>Über dieses Projekt</h3>
+        <p>Der Funkhelfer ist ein privates, nicht-kommerzielles Projekt, präsentiert von der <a href="https://www.flugschule-phoenix.de/" target="_blank" rel="noopener">Flugschule Phönix</a>. Wie mit Daten umgegangen wird, steht in der <button type="button" class="linkbtn" data-open="privacy">Datenschutzerklärung</button>.</p>
       </section>
     </form>
   </dialog>

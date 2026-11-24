@@ -185,6 +185,21 @@ main { max-width: 560px; margin: 0 auto; padding: 0 16px 24px; }
   .sponsor img, .info__sponsor img { background: #fff; border-radius: 12px; padding: 6px; }
 }
 
+/* ---------- Footer ---------- */
+.footer { text-align: center; color: var(--muted); font-size: .85rem; padding: 4px 0 8px; }
+.footer p { margin: 4px 0; }
+.footer a { color: var(--muted); }
+.footer button, .linkbtn {
+  border: 0; background: none; padding: 4px 2px; color: inherit; font-size: inherit;
+  text-decoration: underline; text-underline-offset: 3px;
+}
+.linkbtn { color: var(--orange); padding: 0; }
+.footer .heart { display: inline-block; margin: 0 .2em;animation: beat 1.6s ease-in-out infinite; }
+@keyframes beat { 0%, 60%, 100% { transform: scale(1); } 30% { transform: scale(1.18); } }
+
+.legal ul { padding-left: 20px; }
+.legal section p, .legal li { color: var(--ink); }
+
 /* ---------- Dialoge ---------- */
 dialog { border: 0; padding: 0; color: var(--ink); background: var(--surface); }
 dialog::backdrop { background: rgb(20 10 0 / .45); }
