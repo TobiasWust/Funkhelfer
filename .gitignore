@@ -100,3 +100,5 @@ locales/*.invalid
 
 #sascha modules
 sascha_modules/*.txt
+.ref/
+.imagegen/

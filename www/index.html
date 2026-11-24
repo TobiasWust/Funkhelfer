@@ -1,597 +1,150 @@
 <!doctype html>
-<html>
-
+<html lang="de">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>FS Phönix Funkhelfer</title>
-  <meta name="description"
-    content="Eine App, die dabei hilft mit unterschiedlichen Funkgeräten zu funken. Dafür wird ein Umrechnung von Kanal zu Frequenz angeboten.">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#ffaa4d">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Funkhelfer – PMR, LPD, Freenet und CTCSS</title>
+  <meta name="description" content="Kanal und Frequenz für PMR446, LPD und Freenet, CTCSS-Töne und Gruppenkanal teilen. Offline-App für Gleitschirmflieger, präsentiert von der Flugschule Phönix.">
+  <meta name="theme-color" content="#ff5b00">
+  <meta name="color-scheme" content="light dark">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
-  <!-- Place favicon.ico in the root directory -->
-
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="img/icons/logo-96.png" type="image/png">
+  <link rel="apple-touch-icon" href="img/icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-title" content="Funkhelfer">
+  <link rel="preload" href="fonts/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="css/style.css">
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('sw.js');
-    };
-  </script>
+  <script type="module" src="js/app.js"></script>
 </head>
-
 <body>
-  <div class="menuwrapper clicktrough">
-  </div>
-  <nav class="topmenu">
-    <ul>
-      <li id="pmrmenu" class="menutoggle menuactive">PMR</li>
-      <li id="lpdmenu" class="menutoggle menuactive">LPD</li>
-      <li id="unterkanalmenu" class="menutoggle menuactive">Unterkanal</li>
-      <li>
-        <hr>
-      </li>
-      <li id="showImpressum">Impressum</li>
-    </ul>
-  </nav>
+  <header class="topbar">
+    <img class="topbar__logo" src="img/icons/logo-96.png" width="40" height="40" alt="">
+    <h1>Funkhelfer</h1>
+    <button class="iconbtn" id="openInfo" aria-label="Infos und Tipps">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 11v6M12 7.5v.01"/></svg>
+    </button>
+  </header>
 
-  <div id="wrapper">
-    <!--[if lte IE 9]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-        <![endif]-->
-    <div class="header">
-      <div class="menubutton">
-        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="26" height="26" viewBox="0 0 26 26"
-          style=" fill:#000000;">
-          <g id="surface1">
-            <path d="M 0 4 L 0 6 L 26 6 L 26 4 Z M 0 12 L 0 14 L 26 14 L 26 12 Z M 0 20 L 0 22 L 26 22 L 26 20 Z ">
-            </path>
-          </g>
-        </svg>
-      </div>
-      <h1>Flugschule Phönix Funkhelfer</h1>
-      <img src="img/logo.png" alt="Flugschule Phönix Logo">
+  <main>
+    <section class="group" id="group" aria-label="Unser Gruppenkanal"></section>
+
+    <div class="search">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+      <input id="search" type="search" inputmode="decimal" autocomplete="off" enterkeyhint="search"
+        placeholder="Kanal oder Frequenz suchen" aria-label="Kanal oder Frequenz suchen">
     </div>
 
-    <div class="tablegrid">
-      <h2 id="pmrlabel">PMR</h2>
-      <div id="pmrlist" class="list">
-        <table>
-          <tr>
-            <td>1</td>
-            <td>446,00625</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>446,01875</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>446,03125</td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>446,04375</td>
-          </tr>
-          <tr>
-            <td>5</td>
-            <td>446,05625</td>
-          </tr>
-          <tr>
-            <td>6</td>
-            <td>446,06875</td>
-          </tr>
-          <tr>
-            <td>7</td>
-            <td>446,08125</td>
-          </tr>
-          <tr>
-            <td>8</td>
-            <td>446,09375</td>
-          </tr>
-          <tr>
-            <td>9</td>
-            <td>446,10625</td>
-          </tr>
-          <tr>
-            <td>10</td>
-            <td>446,11875</td>
-          </tr>
-          <tr>
-            <td>11</td>
-            <td>446,13125</td>
-          </tr>
-          <tr>
-            <td>12</td>
-            <td>446,14375</td>
-          </tr>
-          <tr>
-            <td>13</td>
-            <td>446,15625</td>
-          </tr>
-          <tr>
-            <td>14</td>
-            <td>446,16875</td>
-          </tr>
-          <tr>
-            <td>15</td>
-            <td>446,18125</td>
-          </tr>
-          <tr>
-            <td>16</td>
-            <td>446,19375</td>
-          </tr>
+    <nav class="tabs" role="tablist" aria-label="Funkdienst">
+      <button role="tab" data-tab="pmr">PMR</button>
+      <button role="tab" data-tab="lpd">LPD</button>
+      <button role="tab" data-tab="freenet">Freenet</button>
+      <button role="tab" data-tab="ctcss">CTCSS</button>
+    </nav>
 
-        </table>
+    <p class="note" id="note"></p>
+    <ul class="list" id="list" role="list"></ul>
+
+    <a class="sponsor" href="https://www.flugschule-phoenix.de/" target="_blank" rel="noopener">
+      <img src="img/phoenix-logo.png" width="96" height="75" alt="Flugschule Phönix" loading="lazy">
+      <span>Präsentiert von der<br><strong>Flugschule Phönix</strong></span>
+    </a>
+  </main>
+
+  <!-- Detail eines Kanals -->
+  <dialog class="sheet" id="sheet" aria-labelledby="sheetTitle">
+    <form method="dialog" class="sheet__inner">
+      <p class="sheet__kicker" id="sheetKicker"></p>
+      <h2 class="sheet__title" id="sheetTitle"></h2>
+      <p class="sheet__big" id="sheetBig"></p>
+      <div class="sheet__tones" id="sheetTones" hidden>
+        <label for="toneSelect">CTCSS (Unterkanal)</label>
+        <select id="toneSelect"></select>
       </div>
-
-      <h2 id="lpdlabel">LPD</h2>
-      <div id="lpdlist" class="list">
-        <table>
-          <tr>
-            <td>1</td>
-            <td>433,075</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>433,100</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>433,125</td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>433,150</td>
-          </tr>
-          <tr>
-            <td>5</td>
-            <td>433,175</td>
-          </tr>
-          <tr>
-            <td>6</td>
-            <td>433,200</td>
-          </tr>
-          <tr>
-            <td>7</td>
-            <td>433,225</td>
-          </tr>
-          <tr>
-            <td>8</td>
-            <td>433,250</td>
-          </tr>
-          <tr>
-            <td>9</td>
-            <td>433,275</td>
-          </tr>
-          <tr>
-            <td>10</td>
-            <td>433,300</td>
-          </tr>
-          <tr>
-            <td>11</td>
-            <td>433,325</td>
-          </tr>
-          <tr>
-            <td>12</td>
-            <td>433,350</td>
-          </tr>
-          <tr>
-            <td>13</td>
-            <td>433,375</td>
-          </tr>
-          <tr>
-            <td>14</td>
-            <td>433,400</td>
-          </tr>
-          <tr>
-            <td>15</td>
-            <td>433,425</td>
-          </tr>
-          <tr>
-            <td>16</td>
-            <td>433,450</td>
-          </tr>
-          <tr>
-            <td>17</td>
-            <td>433,475</td>
-          </tr>
-          <tr>
-            <td>18</td>
-            <td>433,500</td>
-          </tr>
-          <tr>
-            <td>19</td>
-            <td>433,525</td>
-          </tr>
-          <tr>
-            <td>20</td>
-            <td>433,550</td>
-          </tr>
-          <tr>
-            <td>21</td>
-            <td>433,575</td>
-          </tr>
-          <tr>
-            <td>22</td>
-            <td>433,600</td>
-          </tr>
-          <tr>
-            <td>23</td>
-            <td>433,625</td>
-          </tr>
-          <tr>
-            <td>24</td>
-            <td>433,650</td>
-          </tr>
-          <tr>
-            <td>25</td>
-            <td>433,675</td>
-          </tr>
-          <tr>
-            <td>26</td>
-            <td>433,700</td>
-          </tr>
-          <tr>
-            <td>27</td>
-            <td>433,725</td>
-          </tr>
-          <tr>
-            <td>28</td>
-            <td>433,750</td>
-          </tr>
-          <tr>
-            <td>29</td>
-            <td>433,775</td>
-          </tr>
-          <tr>
-            <td>30</td>
-            <td>433,800</td>
-          </tr>
-          <tr>
-            <td>31</td>
-            <td>433,825</td>
-          </tr>
-          <tr>
-            <td>32</td>
-            <td>433,850</td>
-          </tr>
-          <tr>
-            <td>33</td>
-            <td>433,875</td>
-          </tr>
-          <tr>
-            <td>34</td>
-            <td>433,900</td>
-          </tr>
-          <tr>
-            <td>35</td>
-            <td>433,925</td>
-          </tr>
-          <tr>
-            <td>36</td>
-            <td>433,950</td>
-          </tr>
-          <tr>
-            <td>37</td>
-            <td>433,975</td>
-          </tr>
-          <tr>
-            <td>38</td>
-            <td>434,000</td>
-          </tr>
-          <tr>
-            <td>39</td>
-            <td>434,025</td>
-          </tr>
-          <tr>
-            <td>40</td>
-            <td>434,050</td>
-          </tr>
-          <tr>
-            <td>41</td>
-            <td>434,075</td>
-          </tr>
-          <tr>
-            <td>42</td>
-            <td>434,100</td>
-          </tr>
-          <tr>
-            <td>43</td>
-            <td>434,125</td>
-          </tr>
-          <tr>
-            <td>44</td>
-            <td>434,150</td>
-          </tr>
-          <tr>
-            <td>45</td>
-            <td>434,175</td>
-          </tr>
-          <tr>
-            <td>46</td>
-            <td>434,200</td>
-          </tr>
-          <tr>
-            <td>47</td>
-            <td>434,225</td>
-          </tr>
-          <tr>
-            <td>48</td>
-            <td>434,250</td>
-          </tr>
-          <tr>
-            <td>49</td>
-            <td>434,275</td>
-          </tr>
-          <tr>
-            <td>50</td>
-            <td>434,300</td>
-          </tr>
-          <tr>
-            <td>51</td>
-            <td>434,325</td>
-          </tr>
-          <tr>
-            <td>52</td>
-            <td>434,350</td>
-          </tr>
-          <tr>
-            <td>53</td>
-            <td>434,375</td>
-          </tr>
-          <tr>
-            <td>54</td>
-            <td>434,400</td>
-          </tr>
-          <tr>
-            <td>55</td>
-            <td>434,425</td>
-          </tr>
-          <tr>
-            <td>56</td>
-            <td>434,450</td>
-          </tr>
-          <tr>
-            <td>57</td>
-            <td>434,475</td>
-          </tr>
-          <tr>
-            <td>58</td>
-            <td>434,500</td>
-          </tr>
-          <tr>
-            <td>59</td>
-            <td>434,525</td>
-          </tr>
-          <tr>
-            <td>60</td>
-            <td>434,550</td>
-          </tr>
-          <tr>
-            <td>61</td>
-            <td>434,575</td>
-          </tr>
-          <tr>
-            <td>62</td>
-            <td>434,600</td>
-          </tr>
-          <tr>
-            <td>63</td>
-            <td>434,625</td>
-          </tr>
-          <tr>
-            <td>64</td>
-            <td>434,650</td>
-          </tr>
-          <tr>
-            <td>65</td>
-            <td>434,675</td>
-          </tr>
-          <tr>
-            <td>66</td>
-            <td>434,700</td>
-          </tr>
-          <tr>
-            <td>67</td>
-            <td>434,725</td>
-          </tr>
-          <tr>
-            <td>68</td>
-            <td>434,750</td>
-          </tr>
-          <tr>
-            <td>69</td>
-            <td>434,775</td>
-          </tr>
-        </table>
+      <div class="sheet__actions">
+        <button type="button" class="btn btn--primary" id="sheetSet">Als Gruppenkanal merken</button>
+        <button type="button" class="btn" id="sheetCopy">Kopieren</button>
+        <button class="btn btn--ghost" value="close">Schließen</button>
       </div>
+    </form>
+  </dialog>
 
-      <h2 id="unterkanallabel">Unterkanal</h2>
-      <div id="unterkanallist" class="list">
-        <table>
-          <tr>
-            <td>1</td>
-            <td>67,0</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>71,9</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>74,4</td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>77,0</td>
-          </tr>
-          <tr>
-            <td>5</td>
-            <td>79,7</td>
-          </tr>
-          <tr>
-            <td>6</td>
-            <td>82,5</td>
-          </tr>
-          <tr>
-            <td>7</td>
-            <td>85,4</td>
-          </tr>
-          <tr>
-            <td>8</td>
-            <td>88,5</td>
-          </tr>
-          <tr>
-            <td>9</td>
-            <td>91,5</td>
-          </tr>
-          <tr>
-            <td>10</td>
-            <td>94,8</td>
-          </tr>
-          <tr>
-            <td>11</td>
-            <td>97,4</td>
-          </tr>
-          <tr>
-            <td>12</td>
-            <td>100</td>
-          </tr>
-          <tr>
-            <td>13</td>
-            <td>103,5</td>
-          </tr>
-          <tr>
-            <td>14</td>
-            <td>107,2</td>
-          </tr>
-          <tr>
-            <td>15</td>
-            <td>110,9</td>
-          </tr>
-          <tr>
-            <td>16</td>
-            <td>114,8</td>
-          </tr>
-          <tr>
-            <td>17</td>
-            <td>118,8</td>
-          </tr>
-          <tr>
-            <td>18</td>
-            <td>123,0</td>
-          </tr>
-          <tr>
-            <td>19</td>
-            <td>127,3</td>
-          </tr>
-          <tr>
-            <td>20</td>
-            <td>131,8</td>
-          </tr>
-          <tr>
-            <td>21</td>
-            <td>136,5</td>
-          </tr>
-          <tr>
-            <td>22</td>
-            <td>141,3</td>
-          </tr>
-          <tr>
-            <td>23</td>
-            <td>146,2</td>
-          </tr>
-          <tr>
-            <td>24</td>
-            <td>151,4</td>
-          </tr>
-          <tr>
-            <td>25</td>
-            <td>156,7</td>
-          </tr>
-          <tr>
-            <td>26</td>
-            <td>162,2</td>
-          </tr>
-          <tr>
-            <td>27</td>
-            <td>167,9</td>
-          </tr>
-          <tr>
-            <td>28</td>
-            <td>173,8</td>
-          </tr>
-          <tr>
-            <td>29</td>
-            <td>179,9</td>
-          </tr>
-          <tr>
-            <td>30</td>
-            <td>186,2</td>
-          </tr>
-          <tr>
-            <td>31</td>
-            <td>192,8</td>
-          </tr>
-          <tr>
-            <td>32</td>
-            <td>203,5</td>
-          </tr>
-          <tr>
-            <td>33</td>
-            <td>210,7</td>
-          </tr>
-          <tr>
-            <td>34</td>
-            <td>218,1</td>
-          </tr>
-          <tr>
-            <td>35</td>
-            <td>225,7</td>
-          </tr>
-          <tr>
-            <td>36</td>
-            <td>233,6</td>
-          </tr>
-          <tr>
-            <td>37</td>
-            <td>241,8</td>
-          </tr>
-          <tr>
-            <td>38</td>
-            <td>250,3</td>
-          </tr>
+  <!-- Großanzeige für den Startplatz -->
+  <dialog class="big" id="big" aria-label="Großanzeige">
+    <form method="dialog" class="big__inner">
+      <p class="big__label" id="bigService"></p>
+      <p class="big__ch" id="bigCh"></p>
+      <p class="big__freq" id="bigFreq"></p>
+      <p class="big__tone" id="bigTone"></p>
+      <button class="btn btn--light" value="close">Schließen</button>
+    </form>
+  </dialog>
 
-        </table>
-      </div>
-    </div>
-  </div>
+  <!-- Infos -->
+  <dialog class="info" id="info" aria-labelledby="infoTitle">
+    <form method="dialog" class="info__inner">
+      <header class="info__head">
+        <h2 id="infoTitle">Infos &amp; Tipps</h2>
+        <button class="iconbtn" value="close" aria-label="Schließen">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+        </button>
+      </header>
 
-  <div id="impressum">
-    <div>
-      <h2>Flugschule Phönix</h2>
-      Alexander Müller<br>
-      Spessartstraße 22<br>
-      D-63546 Hammersbach<br>
-      ✆ +49 157 896 551 28<br>
-      <a href="https://www.paragliding-phoenix.de/">https://www.paragliding-phoenix.de/</a>
-    </div>
+      <section>
+        <h3>Kanal ausmachen, aber richtig</h3>
+        <ul class="tips">
+          <li>Macht <strong>Dienst, Kanal und CTCSS</strong> aus, z.&nbsp;B. „PMR 12, CTCSS 7“. Nur „Kanal 12“ reicht nicht.</li>
+          <li>Manche Geräte zählen weiter, als es echte Kanäle gibt. Beim Midland XT50 sind die Kanäle 9–24 nur die alten Kanäle mit festem CTCSS. Im Zweifel die <strong>Frequenz</strong> vergleichen.</li>
+          <li>Die <strong>neuen PMR-Kanäle 9–16</strong> sind meist freier. Ältere Geräte kennen aber nur 1–8.</li>
+          <li>CTCSS macht den Kanal <strong>nicht privat</strong>. Wer ohne Code zuhört, hört euch trotzdem.</li>
+          <li>Tipp: Merk dir euren Kanal oben als Gruppenkanal und schick ihn mit <strong>Teilen</strong> an alle. Wer den Link öffnet, hat ihn direkt in der App.</li>
+        </ul>
+      </section>
 
-    <div>
-      <h2>Entwicklung</h2>
-      Tobias Wust<br>
-      <a href="https://www.tobiaswust.de/">https://www.tobiaswust.de/</a>
-    </div>
+      <section>
+        <h3>Wer darf was?</h3>
+        <dl class="facts">
+          <dt>PMR446</dt><dd>ohne Lizenz · 0,5 W · 446,0–446,2 MHz · fest eingebaute Antenne</dd>
+          <dt>LPD 433</dt><dd>ohne Lizenz · 10 mW · 433,05–434,79 MHz</dd>
+          <dt>Freenet</dt><dd>ohne Lizenz · 1 W · 149 MHz · nur Deutschland</dd>
+          <dt>Baofeng &amp; Co.</dt><dd>Senden nur mit Amateurfunk-Lizenz auf Amateurfunkfrequenzen, nicht auf PMR.</dd>
+        </dl>
+        <p class="small">Keine Rechtsberatung. Verbindlich sind die Allgemeinzuteilungen der Bundesnetzagentur.
+          Mehr dazu: <a href="https://www.gleitschirmfunk.de/funken-beim-gleitschirmfliegen/" target="_blank" rel="noopener">Funkdienste im Überblick</a></p>
+      </section>
 
-    <p>Version: 1.1.2</p>
+      <section>
+        <h3>Flugfunk Luft–Luft</h3>
+        <p class="small">Nur mit Flugfunkberechtigung und zugelassenem 8,33-kHz-Gerät.</p>
+        <ul class="airlist" id="airList"></ul>
+      </section>
 
-    <button>Zurück</button>
-  </div>
-  <script src="js/script.js"></script>
-  <!-- <p><a href="https://paragliding-phoenix.de">https://paragliding-phoenix.de</a></p> -->
+      <section>
+        <h3>Anleitungen für dein Funkgerät</h3>
+        <p>Wie du Kanal und CTCSS an deinem Gerät einstellst, steht auf
+          <a href="https://www.gleitschirmfunk.de/anleitungen/" target="_blank" rel="noopener">gleitschirmfunk.de</a>.
+          Welcher Funkdienst für eure Gruppe passt:
+          <a href="https://www.gleitschirmfunk.de/ratgeber/pmr-lpd-freenet-welcher-kanal/" target="_blank" rel="noopener">PMR, LPD oder Freenet?</a></p>
+      </section>
+
+      <section class="info__sponsor">
+        <img src="img/phoenix-logo.png" width="160" height="125" alt="Flugschule Phönix" loading="lazy">
+        <div>
+          <h3>Flugschule Phönix</h3>
+          <p>Alexander Müller<br>Spessartstraße 22<br>63546 Hammersbach<br>
+            <a href="tel:+4915789655128">+49 157 896 551 28</a><br>
+            <a href="https://www.flugschule-phoenix.de/" target="_blank" rel="noopener">flugschule-phoenix.de</a></p>
+        </div>
+      </section>
+
+      <section>
+        <h3>Entwicklung</h3>
+        <p>Tobias Wust · <a href="https://www.tobiaswust.de/" target="_blank" rel="noopener">tobiaswust.de</a></p>
+        <p class="small">Version <span id="version"></span> · funktioniert offline</p>
+        <button type="button" class="btn" id="installBtn" hidden>App installieren</button>
+      </section>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 </body>
-
 </html>
