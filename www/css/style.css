@@ -174,6 +174,34 @@ main { max-width: 560px; margin: 0 auto; padding: 0 16px 24px; }
 }
 .row__tag--group { background: var(--orange); color: #fff; }
 
+/* ---------- Knopf zu gleitschirmfunk.de (Farben von dort: Navy, Himmel, Sonne) ---------- */
+.gsf {
+  display: flex; align-items: center; gap: 14px;
+  margin-top: 20px; padding: 14px 16px 14px 14px;
+  border-radius: 20px; text-decoration: none; color: #fff;
+  background:
+    radial-gradient(120% 140% at 100% 0%, rgb(255 210 63 / .45), transparent 55%),
+    linear-gradient(135deg, #0b1a3a 0%, #0a6fb0 70%, #1e9be8 100%);
+  box-shadow: 0 6px 24px rgb(11 26 58 / .28);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.gsf:hover { transform: translateY(-1px); box-shadow: 0 10px 28px rgb(11 26 58 / .34); }
+.gsf:active { transform: scale(.98); }
+.gsf__img { flex: none; width: 72px; height: 72px; border-radius: 50%; box-shadow: 0 0 0 3px rgb(255 255 255 / .85); }
+.gsf__text { flex: 1; display: grid; gap: 2px; min-width: 0; }
+.gsf__kicker { font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; color: #ffd23f; }
+.gsf__title { font-weight: 400; font-size: 1.12rem; line-height: 1.25; }
+.gsf__sub { font-size: .85rem; opacity: .85; line-height: 1.35; }
+.gsf__arrow {
+  flex: none; width: 36px; height: 36px; padding: 8px; border-radius: 50%;
+  background: #ffd23f; color: #0b1a3a; stroke-width: 2.5;
+  transition: translate .15s ease;
+}
+.gsf:hover .gsf__arrow { translate: 3px 0; }
+.gsf--compact { margin: 8px 0 10px; padding: 10px 12px 10px 10px; }
+.gsf--compact .gsf__img { width: 56px; height: 56px; }
+.gsf--compact .gsf__title { font-size: 1rem; }
+
 /* ---------- Sponsor ---------- */
 .sponsor {
   display: flex; align-items: center; justify-content: center; gap: 12px;

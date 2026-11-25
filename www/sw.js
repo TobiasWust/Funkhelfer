@@ -1,5 +1,5 @@
 // Bei jeder Änderung an den Dateien die Version hochzählen, dann bekommen alle das Update.
-const CACHE = 'funkhelfer-v2.1.0';
+const CACHE = 'funkhelfer-v2.2.0';
 const ASSETS = [
   './',
   'index.html',
@@ -10,6 +10,7 @@ const ASSETS = [
   'site.webmanifest',
   'favicon.ico',
   'img/phoenix-logo.png',
+  'img/gleitschirmfunk.webp',
   'img/icons/logo-96.png',
   'img/icons/logo-192.png',
   'img/icons/logo-512.png',

@@ -1,6 +1,6 @@
 import { SERVICES, CTCSS, AIR_TO_AIR, fmt, service, tone } from './data.js';
 
-const VERSION = '2.1.0';
+const VERSION = '2.2.0';
 const $ = (s) => document.querySelector(s);
 const store = {
   get(k, d) { try { const v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); } catch { return d; } },
