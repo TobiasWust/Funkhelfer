@@ -5,7 +5,7 @@
 <h1 align="center">Funkhelfer</h1>
 
 <p align="center">Kanal und Frequenz für PMR446, LPD und Freenet, CTCSS-Töne und ein Gruppenkanal zum Teilen.<br>
-Offline-Web-App für Gleitschirmflieger, präsentiert von der <a href="https://www.flugschule-phoenix.de/">Flugschule Phönix</a>.</p>
+Offline-Web-App für Gleitschirmflieger, in Partnerschaft mit der <a href="https://www.flugschule-phoenix.de/">Flugschule Phönix</a>.</p>
 
 <p align="center"><a href="https://funkhelfer.de/">funkhelfer.de</a></p>
 

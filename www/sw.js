@@ -1,5 +1,5 @@
 // Bei jeder Änderung an den Dateien die Version hochzählen, dann bekommen alle das Update.
-const CACHE = 'funkhelfer-v2.2.0';
+const CACHE = 'funkhelfer-v2.3.0';
 const ASSETS = [
   './',
   'index.html',

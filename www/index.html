@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Funkhelfer – PMR, LPD, Freenet und CTCSS</title>
-  <meta name="description" content="Kanal und Frequenz für PMR446, LPD und Freenet, CTCSS-Töne und Gruppenkanal teilen. Offline-App für Gleitschirmflieger, präsentiert von der Flugschule Phönix.">
+  <meta name="description" content="Kanal und Frequenz für PMR446, LPD und Freenet, CTCSS-Töne und Gruppenkanal teilen. Offline-App für Gleitschirmflieger, in Partnerschaft mit der Flugschule Phönix.">
   <meta name="theme-color" content="#ff5b00">
   <meta name="color-scheme" content="light dark">
   <link rel="manifest" href="site.webmanifest">
@@ -56,7 +56,7 @@
 
     <a class="sponsor" href="https://www.flugschule-phoenix.de/" target="_blank" rel="noopener">
       <img src="img/phoenix-logo.png" width="96" height="75" alt="Flugschule Phönix" loading="lazy">
-      <span>Präsentiert von der<br><strong>Flugschule Phönix</strong></span>
+      <span>Partner<br><strong>Flugschule Phönix</strong></span>
     </a>
 
     <footer class="footer">
@@ -65,9 +65,8 @@
         <button type="button" data-open="privacy">Datenschutz</button>
         <span aria-hidden="true">·</span>
         <button type="button" data-open="imprint">Impressum</button>
-        <span aria-hidden="true">·</span>
-        <a href="https://ko-fi.com/tobiaswust" target="_blank" rel="noopener noreferrer">☕ Kaffee spendieren</a>
       </p>
+      <p><a href="https://ko-fi.com/tobiaswust" target="_blank" rel="noopener noreferrer">☕ Kaffee spendieren</a></p>
     </footer>
   </main>
 
@@ -111,68 +110,71 @@
       </header>
 
       <section>
-        <h3>Kanal ausmachen, aber richtig</h3>
-        <ul class="tips">
-          <li>Macht <strong>Dienst, Kanal und CTCSS</strong> aus, z.&nbsp;B. „PMR 12, CTCSS 7“. Nur „Kanal 12“ reicht nicht.</li>
-          <li>Manche Geräte zählen weiter, als es echte Kanäle gibt. Beim Midland XT50 sind die Kanäle 9–24 nur die alten Kanäle mit festem CTCSS. Im Zweifel die <strong>Frequenz</strong> vergleichen.</li>
-          <li>Die <strong>neuen PMR-Kanäle 9–16</strong> sind meist freier. Ältere Geräte kennen aber nur 1–8.</li>
-          <li>CTCSS macht den Kanal <strong>nicht privat</strong>. Wer ohne Code zuhört, hört euch trotzdem.</li>
-          <li>Tipp: Merk dir euren Kanal oben als Gruppenkanal und schick ihn mit <strong>Teilen</strong> an alle. Wer den Link öffnet, hat ihn direkt in der App.</li>
+        <h3>So geht's</h3>
+        <ul class="howto">
+          <li><span class="howto__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg></span>
+            <span><strong>Kanal antippen</strong> und als Gruppenkanal merken</span></li>
+          <li><span class="howto__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V3M7 8l5-5 5 5M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"/></svg></span>
+            <span><strong>Teilen</strong> schickt allen einen Link zum Kanal</span></li>
+          <li><span class="howto__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></span>
+            <span><strong>Groß</strong> zeigt ihn zum Herzeigen am Startplatz</span></li>
         </ul>
       </section>
 
       <section>
-        <h3>Wer darf was?</h3>
-        <dl class="facts">
-          <dt>PMR446</dt><dd>ohne Lizenz · 0,5 W · 446,0–446,2 MHz · fest eingebaute Antenne</dd>
-          <dt>LPD 433</dt><dd>ohne Lizenz · 10 mW · 433,05–434,79 MHz</dd>
-          <dt>Freenet</dt><dd>ohne Lizenz · 1 W · 149 MHz · nur Deutschland</dd>
-          <dt>Baofeng &amp; Co.</dt><dd>Senden nur mit Amateurfunk-Lizenz auf Amateurfunkfrequenzen, nicht auf PMR.</dd>
-        </dl>
-        <p class="small">Keine Rechtsberatung. Verbindlich sind die Allgemeinzuteilungen der Bundesnetzagentur.
-          Mehr dazu: <a href="https://www.gleitschirmfunk.de/funken-beim-gleitschirmfliegen/" target="_blank" rel="noopener">Funkdienste im Überblick</a></p>
+        <h3>Kanal absprechen</h3>
+        <ol class="rules">
+          <li><span><strong>Dienst, Kanal und CTCSS nennen:</strong> „PMR 12, CTCSS 7“</span></li>
+          <li><span><strong>Im Zweifel die Frequenz vergleichen.</strong> Manche Geräte zählen Kanäle anders (z.&nbsp;B. Midland XT50).</span></li>
+          <li><span><strong>PMR 9–16 sind meist freier,</strong> alte Geräte kennen nur 1–8.</span></li>
+          <li><span><strong>CTCSS ist nur ein Filter,</strong> nicht privat.</span></li>
+        </ol>
       </section>
 
       <section>
-        <h3>Flugfunk Luft–Luft</h3>
-        <p class="small">Nur mit Flugfunkberechtigung und zugelassenem 8,33-kHz-Gerät.</p>
-        <ul class="airlist" id="airList"></ul>
+        <h3>Was ist erlaubt?</h3>
+        <table class="svc">
+          <tbody>
+            <tr><th>PMR446</th><td class="num">0,5&nbsp;W</td><td>ohne Lizenz</td></tr>
+            <tr><th>LPD&nbsp;433</th><td class="num">10&nbsp;mW</td><td>ohne Lizenz</td></tr>
+            <tr><th>Freenet</th><td class="num">1&nbsp;W</td><td>ohne Lizenz, nur DE</td></tr>
+            <tr><th>Baofeng&nbsp;&amp;&nbsp;Co.</th><td colspan="2">nur mit Amateurfunk-Lizenz, nicht auf PMR</td></tr>
+          </tbody>
+        </table>
+        <details class="more">
+          <summary>Flugfunk Luft–Luft</summary>
+          <p class="small">Nur mit Flugfunkberechtigung und zugelassenem 8,33-kHz-Gerät.</p>
+          <ul class="airlist" id="airList"></ul>
+        </details>
+        <p class="small">Keine Rechtsberatung. Verbindlich ist die Bundesnetzagentur.</p>
       </section>
 
       <section>
-        <h3>Anleitungen für dein Funkgerät</h3>
+        <h3>Mehr wissen</h3>
         <a class="gsf gsf--compact" href="https://www.gleitschirmfunk.de/anleitungen/?utm_source=funkhelfer&amp;utm_medium=app&amp;utm_campaign=infos" target="_blank" rel="noopener">
           <img class="gsf__img" src="img/gleitschirmfunk.webp" width="56" height="56" alt="" loading="lazy">
           <span class="gsf__text">
             <strong class="gsf__title">Funkgerät einrichten</strong>
-            <span class="gsf__sub">Schritt für Schritt auf gleitschirmfunk.de</span>
+            <span class="gsf__sub">Anleitungen auf gleitschirmfunk.de</span>
           </span>
           <svg class="gsf__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
-        <p>
-          Welcher Funkdienst für eure Gruppe passt:
-          <a href="https://www.gleitschirmfunk.de/ratgeber/pmr-lpd-freenet-welcher-kanal/" target="_blank" rel="noopener">PMR, LPD oder Freenet?</a></p>
+        <a class="linkrow" href="https://www.gleitschirmfunk.de/ratgeber/pmr-lpd-freenet-welcher-kanal/?utm_source=funkhelfer&amp;utm_medium=app&amp;utm_campaign=infos" target="_blank" rel="noopener">PMR, LPD oder Freenet?<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+        <a class="linkrow" href="https://www.gleitschirmfunk.de/funken-beim-gleitschirmfliegen/?utm_source=funkhelfer&amp;utm_medium=app&amp;utm_campaign=infos" target="_blank" rel="noopener">Funkdienste im Überblick<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
       </section>
 
-      <section class="info__sponsor">
-        <img src="img/phoenix-logo.png" width="160" height="125" alt="Flugschule Phönix" loading="lazy">
-        <div>
-          <h3>Flugschule Phönix</h3>
-          <p>Alexander Müller<br>Spessartstraße 22<br>63546 Hammersbach<br>
-            <a href="tel:+4915789655128">+49 157 896 551 28</a><br>
-            <a href="https://www.flugschule-phoenix.de/" target="_blank" rel="noopener">flugschule-phoenix.de</a></p>
-        </div>
-      </section>
-
-      <section>
-        <h3>Entwicklung</h3>
-        <p>Made with ❤️ by <a href="https://wust.dev/" target="_blank" rel="noopener noreferrer">Wust</a> ·
-          <a href="https://ko-fi.com/tobiaswust" target="_blank" rel="noopener noreferrer">☕ Kaffee spendieren</a></p>
+      <footer class="info__foot">
+        <button type="button" class="btn btn--primary" id="installBtn" hidden>App installieren</button>
+        <a class="info__partner" href="https://www.flugschule-phoenix.de/" target="_blank" rel="noopener">
+          <span class="small">Partner</span>
+          <img src="img/phoenix-logo.png" width="160" height="125" alt="Flugschule Phönix" loading="lazy">
+        </a>
+        <p>Made with ❤️ by <a href="https://wust.dev/" target="_blank" rel="noopener noreferrer">Wust</a></p>
+        <p><a href="https://ko-fi.com/tobiaswust" target="_blank" rel="noopener noreferrer">☕ Kaffee spendieren</a></p>
         <p class="small">Version <span id="version"></span> · funktioniert offline ·
           <button type="button" class="linkbtn" data-open="privacy">Datenschutz</button> ·
           <button type="button" class="linkbtn" data-open="imprint">Impressum</button></p>
-        <button type="button" class="btn" id="installBtn" hidden>App installieren</button>
-      </section>
+      </footer>
     </form>
   </dialog>
 
@@ -262,7 +264,7 @@
 
       <section>
         <h3>Über dieses Projekt</h3>
-        <p>Der Funkhelfer ist ein privates, nicht-kommerzielles Projekt, präsentiert von der <a href="https://www.flugschule-phoenix.de/" target="_blank" rel="noopener">Flugschule Phönix</a>. Wie mit Daten umgegangen wird, steht in der <button type="button" class="linkbtn" data-open="privacy">Datenschutzerklärung</button>.</p>
+        <p>Der Funkhelfer ist ein privates, nicht-kommerzielles Projekt in Partnerschaft mit der <a href="https://www.flugschule-phoenix.de/" target="_blank" rel="noopener">Flugschule Phönix</a>. Wie mit Daten umgegangen wird, steht in der <button type="button" class="linkbtn" data-open="privacy">Datenschutzerklärung</button>.</p>
       </section>
     </form>
   </dialog>

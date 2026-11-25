@@ -1,6 +1,6 @@
 import { SERVICES, CTCSS, AIR_TO_AIR, fmt, service, tone } from './data.js';
 
-const VERSION = '2.2.0';
+const VERSION = '2.3.0';
 const $ = (s) => document.querySelector(s);
 const store = {
   get(k, d) { try { const v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); } catch { return d; } },
@@ -81,9 +81,7 @@ function renderGroup() {
   share.addEventListener('click', shareGroup);
   const big = el('button', 'btn btn--light', 'Groß');
   big.addEventListener('click', openBig);
-  const edit = el('button', 'btn btn--light', 'Ändern');
-  edit.addEventListener('click', () => openSheet(s, c));
-  actions.append(share, big, edit);
+  actions.append(share, big);
   box.append(main, actions);
 }
 
@@ -95,13 +93,22 @@ function setGroup(g, silent) {
   if (!silent) toast(`Gruppenkanal: ${groupText(g)}`);
 }
 
+let sharing = false;
 async function shareGroup() {
+  if (sharing) return; // Doppeltipp: zweites share() würde scheitern und still kopieren
   const text = `Funk heute: ${groupText(group)}`;
   const url = shareUrl(group);
-  if (navigator.share) {
-    try { await navigator.share({ title: 'Unser Funkkanal', text, url }); return; } catch (e) { if (e.name === 'AbortError') return; }
+  const data = { title: 'Unser Funkkanal', text, url };
+  // Web Share gibt es nicht überall: Desktop-Firefox, viele Desktop-Browser und
+  // In-App-Browser (WhatsApp, Instagram, …) kennen es nicht. Dann bleibt nur die Zwischenablage.
+  if (navigator.share && (!navigator.canShare || navigator.canShare(data))) {
+    sharing = true;
+    try { await navigator.share(data); return; } catch (e) { if (e.name === 'AbortError') return; } finally { sharing = false; }
   }
-  copy(`${text}\n${url}`);
+  try {
+    await navigator.clipboard.writeText(`${text}\n${url}`);
+    toast('Link kopiert. Füg ihn in euren Gruppenchat ein.');
+  } catch { toast(`${text} ${url}`); }
 }
 
 // ---------- Großanzeige ----------

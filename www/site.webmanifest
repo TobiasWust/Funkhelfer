@@ -2,7 +2,7 @@
   "id": "./",
   "name": "Funkhelfer",
   "short_name": "Funkhelfer",
-  "description": "Kanal und Frequenz für PMR446, LPD und Freenet, CTCSS-Töne und Gruppenkanal teilen. Präsentiert von der Flugschule Phönix.",
+  "description": "Kanal und Frequenz für PMR446, LPD und Freenet, CTCSS-Töne und Gruppenkanal teilen. In Partnerschaft mit der Flugschule Phönix.",
   "lang": "de",
   "start_url": "./",
   "scope": "./",
