@@ -1,0 +1,19 @@
+{
+  "id": "dev.wust.funkhelfer",
+  "name": "Funkhelfer",
+  "url": "https://funkhelfer.de/",
+  "kind": "app",
+  "webDir": "www",
+  "languages": [
+    "de",
+    "en"
+  ],
+  "ads": false,
+  "listing": {
+    "de": {
+      "title": "Funkhelfer: PMR446 Kanäle",
+      "short": "PMR-Frequenzen, LPD, Freenet und CTCSS-Töne schnell offline nachschlagen.",
+      "full": "Funkhelfer zeigt dir Kanal und Frequenz für PMR446, LPD 433 und Freenet sowie alle CTCSS-Töne, auch offline ohne Netz. Du schlägst die PMR-Kanäle und Frequenzen in Sekunden nach, findest über die Suche jeden Kanal, jede Frequenz und jeden Ton und legst mit deiner Gruppe einen gemeinsamen Kanal fest. Den Gruppenkanal speicherst du mit Funkdienst, Kanal und CTCSS-Code und schickst ihn per Link an alle. Wer den Link öffnet, hat ihn direkt in der App. Ob unterwegs mit dem Funkgerät in der Gruppe oder am Startplatz beim Gleitschirmfliegen: Mit dem Funkhelfer seid ihr schnell auf demselben Kanal.\n\n• Kanaltabellen für PMR446 (16 Kanäle, die neuen Kanäle 9–16 markiert), LPD 433 (69 Kanäle) und Freenet (6 Kanäle)\n• Alle 38 CTCSS-Töne mit Frequenz\n• Gruppenkanal speichern und per Link teilen\n• Großanzeige für euren Kanal, der Bildschirm bleibt dabei an\n• Suche nach Kanal, Frequenz oder CTCSS-Ton\n• Infos und Tipps: was ohne Lizenz erlaubt ist, Sendeleistung und Frequenzbereiche, und warum CTCSS den Kanal nicht privat macht\n\nWerbefrei, keine Konten, kein Tracking, funktioniert offline."
+    }
+  }
+}
