@@ -1,6 +1,6 @@
 import { SERVICES, CTCSS, AIR_TO_AIR, fmt, service, tone } from './data.js';
 
-const VERSION = '2.3.0';
+const VERSION = '2.3.1';
 const $ = (s) => document.querySelector(s);
 const store = {
   get(k, d) { try { const v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); } catch { return d; } },
@@ -271,9 +271,26 @@ $('#airList').replaceChildren(...AIR_TO_AIR.map((a) => {
   } : null);
 })();
 
+// ---------- Direktlinks #privacy und #imprint (z. B. für Google Play) ----------
+function openFromHash() {
+  const id = location.hash.slice(1);
+  if (id !== 'privacy' && id !== 'imprint') return;
+  const d = document.getElementById(id);
+  document.querySelector('dialog[open]')?.close();
+  d.showModal();
+  d.scrollTop = 0;
+}
+for (const id of ['privacy', 'imprint']) {
+  document.getElementById(id).addEventListener('close', () => {
+    if (location.hash === `#${id}`) history.replaceState(null, '', location.pathname + location.search);
+  });
+}
+window.addEventListener('hashchange', openFromHash);
+
 // ---------- Start ----------
 renderGroup();
 setTab(service(tab) || tab === 'ctcss' ? tab : 'pmr');
+openFromHash();
 
 // ---------- PWA: Installieren und Updates ----------
 let installEvent = null;
